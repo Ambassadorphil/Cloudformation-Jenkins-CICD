@@ -818,5 +818,11 @@ Resources:
         Value: venturaproddb
     DeletionPolicy: Snapshot
 
+  S3Bucket:
+    Type: 'AWS::S3::Bucket'
+    DeletionPolicy: Delete
+    Properties:
+      BucketName: General
+
 
 Outputs: {}
