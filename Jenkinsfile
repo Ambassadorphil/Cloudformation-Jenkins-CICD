@@ -20,14 +20,14 @@ pipeline {
             input('Do you want to proceed considering cost?')
             }
         }
-        stage('delete Prod Stack') {
+        stage('Create Prod Stack') {
             steps {
             sh "aws cloudformation create-stack --stack-name ventura-prod-infra-v1 --template-body file://ventura-prod-env-infra.yaml --parameters file://ventura-infra-parametafile.json --region 'us-east-1'"
             }
         }
-        stage('Delete Prod Stack') {
+        stage('Update Prod Stack') {
             steps {
-            sh "aws cloudformation delete-stack --stack-name ventura-prod-infra-v1 --template-body file://ventura-prod-env-infra.yaml --parameters file://ventura-infra-parametafile.json --region 'us-east-1'"
+            sh "aws cloudformation create-stack --stack-name ventura-prod-infra-v1 --template-body file://ventura-prod-env-infra.yaml --parameters file://ventura-infra-parametafile.json --region 'us-east-1'"
             }
         }
     }
