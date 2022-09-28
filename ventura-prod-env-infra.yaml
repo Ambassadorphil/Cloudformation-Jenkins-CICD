@@ -822,7 +822,7 @@ Resources:
     Type: 'AWS::S3::Bucket'
     DeletionPolicy: Delete
     Properties:
-      BucketName: General12
+      BucketName: generalo
 
 
 Outputs: {}
